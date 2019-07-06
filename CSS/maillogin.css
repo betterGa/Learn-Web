@@ -1,0 +1,82 @@
+#top
+{text-align:center}
+
+#icon
+{position:absolute;
+      top:128px;left:300px;}
+      
+#longtitle
+{position:absolute;
+top:128px;
+left:430px;
+font-size:18px}
+
+#mess
+{position:absolute;
+top:160px;
+left:410px;
+color=#666666;
+line-height:24px;
+font-size:14px;
+margin:0 0 30px 22px;
+width:118px;}
+
+
+
+/*在 CSS 中，类选择器以一个点号显示 */
+.bground
+{position:absolute;
+top:280px;
+left:630px;}
+
+.left
+{position:absolute;
+top:280px;
+left:260px;}
+
+.right
+{position:absolute;
+top:190px;
+left:670px;}
+
+.mar
+{margin:-3px 0 -3px 22px;}
+
+.ad
+{position:absolute;
+top:400px;
+left:290px;
+}
+
+#bottom
+{position:absolute;
+top:500px;
+left:490px;
+text-align:center;
+color:#666666;}
+
+span{font-size:14px;
+font-weight:bold;}
+
+ul,ol,li,form{border:0;
+z-index:inhert;
+list-style:none;}
+
+img,a img
+{border:0;
+margin:0;
+padding:0;}
+
+input
+{font:14px verdana,sans-serif;font-weight:bold;}
+
+html,body
+{margin:0px;
+padding:0;
+font:12px/1.6
+Arial,Helvetica,san-serif;
+color:#437ca0;}
+
+a:link,a:visited{color:#437ca0;text-decoration:none}
+a:hover {text-decoration:underline;}
+
