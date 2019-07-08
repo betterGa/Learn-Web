@@ -1,0 +1,160 @@
+<html>
+<head>
+
+<!--
+<script language="javascript" src="ShowTime.js"></script>
+
+
+
+<!--
+<script>
+ShowTime();
+</script>
+-->
+
+
+<!--弹出一个警告会话框
+/alert(time);-->
+
+
+
+<!--会再关掉上一个会话框后再弹出一个会话框，显示object类，而不是Date,确实弱：alert(typeof(d));-->
+
+
+
+<!--meta:文档的元信息，永远位于 head 元素内部-->
+
+<!--http-equiv 属性为名称/值对提供了名称。并指示服务器在发送实际的文档之前先在要传送给浏览器的 MIME 文档头部包含名称/值对。
+当服务器向浏览器发送文档时，会先发送许多名称/值对。虽然有些服务器会发送许多这种名称/值对，但是所有服务器都至少要发送一个：content-type:text/html。这将告诉浏览器准备接受一个 HTML 文档-->
+
+<!--content 属性提供了名称/值对中的值。该值可以是任何有效的字符串。
+content 属性始终要和 name 属性或 http-equiv 属性一起使用。-->
+
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+</head>
+
+<body>
+
+
+<form name="f">
+<input type=text name=time size=40;>
+</form>
+
+<script>
+function ShowTime()
+{var Upper=["天","一","二","三","四","五","六"];
+
+//创建 Date 对象时，可以使用许多方法对其进行操作。 
+d=new Date();
+
+
+//一个变量的类型取决于第一次赋值的类型
+time=d.getYear()+"年";
+time=d.getFullYear()+"年";
+time+=(d.getMonth()+1)+"月";
+time+=d.getDate()+"日";
+time+="星期 "+Upper[d.getDay()]+"       ";
+time+=addZero(d.getHours())+"时";
+time+=addZero(d.getMinutes())+"分";
+time+=addZero(d.getSeconds())+"秒";
+
+
+//window.document.write(time);在文档页面显示
+
+//window.status=time;已过时
+
+
+f.time.value=time;
+
+setTimeout("ShowTime()",1000);
+
+
+//alert(time);弹出警告框
+
+
+
+
+
+
+}
+
+function addZero(i)
+{if(i<10) return '0'+i;
+return i}
+ShowTime();  //记得要调函数！！！！！！。
+</script>
+
+
+
+
+
+<!--
+将HTML CSS JavaScript结合起来
+<div id="time"/>
+<script>
+function ShowTime()
+{var Upper=["天","一","二","三","四","五","六"];
+
+//创建 Date 对象时，可以使用许多方法对其进行操作。 
+d=new Date();
+
+
+//一个变量的类型取决于第一次赋值的类型
+time=d.getYear()+"年";
+time=d.getFullYear()+"年";
+time+=(d.getMonth()+1)+"月";
+time+=d.getDate()+"日";
+time+="星期 "+Upper[d.getDay()]+"       ";
+time+=addZero(d.getHours())+"时";
+time+=addZero(d.getMinutes())+"分";
+time+=addZero(d.getSeconds())+"秒";
+
+
+//window.document.write(time);在文档页面显示
+
+//window.status=time;已过时
+
+
+document.getElementById("time").innerHTML=time;
+
+setTimeout("ShowTime()",1000);
+
+
+//alert(time);弹出警告框
+
+
+
+
+
+
+}
+
+function addZero(i)
+{if(i<10) return '0'+i;
+return i}
+ShowTime();
+</script>
+-->
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>
