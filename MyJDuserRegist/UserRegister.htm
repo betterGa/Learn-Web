@@ -1,0 +1,315 @@
+<!--显示，无功能
+<html>
+<style type="text/css">
+.label
+{position:absolute;
+right:60%;}
+
+.fi
+{position:relative;
+left:40%;}
+
+.clr
+{height:20px;}
+
+.s
+{font-weight:lighter;
+color:red;}
+
+.text
+{font-family:宋体;
+width:200px;}
+
+.v
+{color:cccccc;
+font-size:12px;}
+
+.a
+{font-size:12px;}
+
+.btn-img
+{position:relative;
+left:40%;}
+
+</style>
+<body>
+
+<form>
+
+
+
+<body>
+
+<form id="f1">
+<div class="label">
+<b class="s">*</b>用户名:</div>
+<div class="fi"> 
+<input type="text" name-"username" class="text" tabindex="1"/>
+
+<br/> 
+<div class="clr"> </div>
+</div>
+
+<div class="label">
+<b class="s">*</b>设置密码:</div>
+<div class="fi">
+<input type="password" name="pwd" class="text" tabindex="2"/>
+
+&nbsp;&nbsp;&nbsp;
+<input type=checkbox name=visi id=viewpwd/>
+<label clss="v">显示密码字符</label><br/>
+<div class="clr"></div>
+</div>
+
+<div class="label"> 
+<b class="s">*</b>确认密码:</div>
+<div class="fi">
+<input type=password name=pwd2 class=text tabindex=3/>
+<br/>
+<div class=clr></div>
+</div>
+
+<div class=label>
+<b class=s>*</b>邮箱:</div>
+<div class=fi>
+<input type=text name=mail class=text tabindex=4/>
+&nbsp;&nbsp;&nbsp;
+<label class=v>免费邮箱:</label>
+<a href="">搜狐</a>
+<a href="">网易</a>
+</br>
+
+<div class=clr></div>
+</div>
+
+<div class=label>推荐人用户名:</div>
+<div class=fi>
+<input type=text name=referrer class=text value="可不填" tabindex=5 />
+<br/>
+<div class=clr></div>
+</div>
+
+<input type=button class=btn-img id=registsubmit value="同意以下协议，提交" tabindex=6 />
+</form>
+</body>
+</html> 
+
+
+</body>
+
+</html>  -->
+
+<html>
+<style type="text/css">
+.label
+{position:absolute;
+right:60%;}
+
+.fi
+{position:relative;
+left:40%;}
+
+.clr
+{height:20px;}
+
+.gray
+{height:20px;
+color:AAAAAA;
+font-size:12px;
+visibility:hidden;  //先隐藏起来
+}
+
+.s
+{font-weight:lighter;
+color:red;}
+
+.text
+{font-family:宋体;
+width:200px;}
+
+.v
+{color:cccccc;
+font-size:12px;}
+
+.a
+{font-size:12px;}
+
+.btn-img
+{position:relative;
+left:40%;}
+
+.ok
+{visibility:hidden; }   
+</style>
+<body>
+
+
+
+
+<script>
+function inUser()
+{username_mess.style.visibility="visible";}
+
+
+/*法二：正则表达式*/
+
+
+function outUser()
+{
+ var u = document.getElementById("usernamee").value;
+
+if(u=="") {username_mess.style.visibility="hidden";}
+
+else
+{reg=/.{4,20}/;
+
+if(!reg.test(u))
+{username_mess.innerHTML="用户名长度只能在4-20位字符之间";
+username_mess.style.color="red";
+username_mess.style.border="1px solid transparent";
+username_ok.style.visibility="hidden";}
+
+else
+{reg2=/^[\u4e00-\u9fa5 \w-]{4,20}$/;
+
+if(reg2.test(u))
+{
+username_OK.style.visibility="visible";
+username_mess.innerHTML="";
+f1.usernamee.style.visibility=hidden;
+}
+else
+{
+username_mess.innerHTML="用户名只能由中文、英文、数字及“_”、“-”组成";
+username_mess.style.color="transparent";
+username_mess.style.border="1px dashed red";
+username_ok.style.visibility="hidden";
+}
+}
+
+}
+
+}
+
+/*法一：逻辑判断
+function outUser()
+{
+ var u = document.getElementById("usernamee").value;
+
+if(u=="") {username_mess.style.visibility="hidden";}
+
+else
+{if(u.length<4||u.length>20)
+
+{username_mess.innerHTML="用户名长度只能在4-20位字符之间";
+username_mess.style.color="red";
+username_mess.style.border="1px solid transparent";
+username_ok.style.visibility="hidden";}
+
+else
+{b=true;
+for(i=0;i<u.length;i++)
+{
+c=u.charAt(i);
+cc=u.charCodeAt(i);
+if(!((c>='a'&&c<='z')||(c>='A'&&c<='Z')||(c>='0'&&c<='9')||c=='_'||c=='-'||(cc>=19968&&cc<=40623)))      //js中优先级顺序：! > && >||
+{b=false; break;}
+}
+
+if(b==true)
+{
+username_OK.style.visibility="visible";
+username_mess.innerHTML="";
+f1.usernamee.style.visibility=hidden;
+
+}
+else
+{
+username_mess.innerHTML="用户名只能由中文、英文、数字及“_”、“-”组成";
+username_mess.style.color="transparent";
+username_mess.style.border="1px dashed red";
+username_ok.style.visibility="hidden";
+}
+
+
+
+}}}
+
+
+*/
+
+
+</script>
+
+
+<form>
+
+<body>
+
+<form id="f1">
+<div class="label">
+<b class="s">*</b>用户名:</div>
+
+<div class="fi"> 
+<input type="text" id="usernamee" class="text" tabindex="1" 
+ onfocus="inUser()" onblur="outUser()" />
+<label id="username_OK" class="ok"> <img src=true.jpg width="28" height="20"></label>
+
+<br/> 
+
+
+<div id="username_mess" class="gray">4-20字符，可由中文、英文、数字及“_”、“-”组成</div>
+</div>
+
+<div class="label">
+<b class="s">*</b>设置密码:</div>
+<div class="fi">
+<input type="password" name="pwd" class="text" tabindex="2" />
+
+&nbsp;&nbsp;&nbsp;
+<input type=checkbox name=visi id=viewpwd/>
+<label clss="v">显示密码字符</label><br/>
+<div class=clr></div>
+</div>
+<div class=label>
+<b class=s>*</b>邮箱:</div>
+<div class=fi>
+<input type=text name=mail class=text tabindex=4/>
+&nbsp;&nbsp;&nbsp;
+<label class=v>免费邮箱:</label>
+<a href="">搜狐</a>
+<a href="">网易</a></br>
+
+<div class=clr></div>
+</div>
+
+<div class=label>推荐人用户名:</div>
+<div class=fi>
+<input type=text name=referrer class=text value="可不填" tabindex=5 />
+<br/>
+<div class=clr></div>
+</div>
+
+<input type=button class=btn-img id=registsubmit value="同意以下协议，提交" tabindex=6 />
+</form>
+</body>
+</html> 
+
+
+</body>
+
+</html> 
+
+
+<!--正则表达式:初
+<html>
+<body>
+<script>
+str="搜狐邮箱用户登录";
+
+reg=/^[\u4e00-\u9fa5]{4,20}$/;
+alert(reg.test(str));
+</script>
+</body>
+</html>
+-->

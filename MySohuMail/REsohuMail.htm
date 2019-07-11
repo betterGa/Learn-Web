@@ -1,0 +1,109 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>搜狐闪电邮箱</title>
+</head>
+
+
+
+<body>
+
+
+<script>
+function vailPass()
+{if(f.pass.value=="")
+{mess.innerHTML="请输入通行证密码";
+f.pass.focus();
+return false;}
+else 
+{mess.innerHTML="";
+loginMsg.style.display="block";
+login.style.display="none";
+setTimeout("mySubmit()",3000);
+return false;
+
+
+}}
+
+function mySubmit()
+{f.submit();}
+
+
+
+
+</script> 
+
+
+
+
+<p>
+<b>
+<font size="5">
+登录搜狐邮箱
+</font></b>
+</p>
+
+<form action="login.jsp" name=f>
+<div id="mess" style="color:red;"> </div>
+<p>
+
+<font face="Arial">
+
+
+<font size="3">&nbsp;&nbsp;&nbsp;
+邮箱：
+<input type="text" name="mail" size="25">@sohu.com
+<br/><br/>
+&nbsp;&nbsp;&nbsp;
+密码：
+<input type="password" name="pass" size="27">
+</font>
+
+<font size="2"><a href="https://v4.passport.sohu.com/fe/forgetPassword/1">忘记密码</a>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="checkbox" name="save">记住登录状态
+<br>
+</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div id="login">
+
+<input type=image src=add.gif onclick="return vailPass()" />
+</div>
+
+
+<div id=loginMsg style=color:red;display:none;>
+正在登录搜狐通行证，请稍后
+</div>
+</form>
+
+<!--
+<script>
+function vailPass1()
+{if(f.pass.value=="") alert("密码不能为空");
+
+<input type=button value="登录" onclick="return vailPass()"/>
+
+
+
+
+
+</p>
+else alert("响应登录按钮");}
+</script>
+-->
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
