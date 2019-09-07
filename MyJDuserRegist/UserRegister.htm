@@ -172,12 +172,22 @@ if(p=="")
 function visibe()
 {
 if(document.getElementById("viewpwd").checked)    //被选了对勾
-document.getElementById("pass").style.backgroundColor="FFEEEE";
+{document.getElementById("pass").style.backgroundColor="FFEEEE";
 var v=document.getElementById("pwd").value;
 var v2=document.getElementById("pwd2").value;
-document.getElementById("chang").innerHTML="<input type='text' name='pwd' class='text' tabindex='2' value='"+v+"' onfocus='inPass()' onBlur='outPass()'/>";
+document.getElementById("chang").innerHTML="<input type='text' name='pwd' class='text' tabindex='2' value='"+v+"' onfocus='inPass()' onblur='outPass()'/>";
+document.getElementById("chang2").innerHTML="<input type='text' name='pwd2' class='text' tabindex='2' value='"+v2+"'onfocus='inRPass()' pnblur='outRPass()'/    >";
+}
+else 
+{
+document.getElementById("pass").style.backgroundColor="FFFFFF";
+var v=document.getElementById("pwd").value;
+var v2=document.getElementById("pwd2").value;
+document.getElementById("chang").innerHTML="<input type='password' name='pwd' class='text' tabindex='2' value='"+v+"' onfocus='inPass()' onblur='outPass()'/>";
+document.getElementById("chang2").innerHTML="<input type='password' name='pwd2' class='text' tabindex='2' value='"+v2+"'onfocus='inRPass()' pnblur='outRPass()'/    >";
 
 
+}
 
 
 }
